@@ -126,10 +126,6 @@ body {
     color: #000;
   }
   
-  button:hover {
-    background-color: #666;
-  }
-  
   #confirm-button {
     background-color: #4caf50;
   }
@@ -166,3 +162,13 @@ body {
     margin-bottom: 5px;
   }
   
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px; /* Reduce the font size for mobile devices */
+    }
+    
+    .container {
+      max-width: 90%; /* Adjust the container width for mobile devices */
+    }
+  }

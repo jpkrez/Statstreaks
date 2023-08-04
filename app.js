@@ -9,7 +9,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 
 async function fetchData() {
