@@ -49,13 +49,13 @@ function updateStreak(streak) {
   streakCounter.classList.remove("streak-fire-orange","streak-fire-red","streak-fire-blue");
 
   // Add the appropriate fire class based on the streak value
-  if (streak >= 3) {
+  if (streak >= 3 && streak < 5) {
     streakCounter.classList.add("streak-fire-orange");
-  } else if (streak >= 5) {
+  } else if (streak >= 5 && streak < 10) {
     streakCounter.classList.add("streak-fire-red");
-  } else if (streak >= 10){
+  } else if (streak >= 10) {
     streakCounter.classList.add("streak-fire-blue");
-}
+  }
 }
 
 // Function to start the game when the user clicks on one of the buttons
