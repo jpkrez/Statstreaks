@@ -8,10 +8,11 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 90%; /* Adjust the container width for mobile devices */
   margin: 20px auto;
   padding: 20px;
   background-color: #333;
@@ -25,6 +26,7 @@ body {
   max-height: 80vh; /* Set a maximum height to prevent excessive scrolling */
   overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
 }
+
   h1 {
     text-align: center;
     margin-top: 20px; /* Add the margin back */
@@ -162,3 +164,4 @@ body {
     margin-bottom: 5px;
   }
   
+
