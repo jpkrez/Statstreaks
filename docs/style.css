@@ -17,8 +17,7 @@ body {
 }
 
 .container {
-  min-width: 700px;
-  max-width: 900px; /* Set the maximum width to your desired value */
+  max-width: 900px;
   width: 90%; /* Adjust the container width for better responsiveness */
   margin: 20px auto;
   padding: 20px;
@@ -26,7 +25,6 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
-
 
 h1 {
   text-align: center;
@@ -151,4 +149,11 @@ button.selected {
   text-align: center;
   color: red;
   margin: 1rem 0; /* Use rem for margin to scale with font size */
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
 }
