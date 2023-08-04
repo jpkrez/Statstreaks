@@ -162,24 +162,3 @@ body {
     margin-bottom: 5px;
   }
   
-
-  /* Adjustments for better spacing on mobile */
-  @media (max-width: 991px) {
-    body {
-      font-size: 16px; /* Increase the font size for better readability on mobile devices */
-    }
-    .streak-container {
-      grid-template-columns: 1fr; /* Change to a single column on mobile devices */
-      grid-row-gap: 10px; /* Add vertical gap between streak boxes on mobile */
-    }
-  
-    .streak-box {
-      margin: 5px 0; /* Add spacing between streak boxes on mobile */
-    }
-  
-    /* Fix the issue with the yellow color not appearing when hovering on mobile */
-    .selected {
-      background-color: #ffd54f;
-      color: #000;
-    }
-  }
