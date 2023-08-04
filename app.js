@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 async function fetchData() {
     try {
-        const response = await Axios.get('https://github.com/jpkrez/Statstreaks/raw/master/public/mw2_player_stats2023.csv', { responseType: 'text' });
+        const response = await Axios.get('https://raw.githubusercontent.com/jpkrez/Statstreaks/master/docs/mw2_player_stats2023.csv', { responseType: 'text' });
         if (!response.data) {
             throw new Error('Empty response received');
         }
