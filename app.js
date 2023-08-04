@@ -49,7 +49,7 @@ app.get('/api/schedule', async (req, res) => {
 
 async function fetchData() {
     try {
-        const response = await Axios.get('http://localhost:3000/mw2_player_stats2023.csv', { responseType: 'text' });
+        const response = await Axios.get('https://github.com/jpkrez/Statstreaks/raw/master/public/mw2_player_stats2023.csv', { responseType: 'text' });
         if (!response.data) {
             throw new Error('Empty response received');
         }
