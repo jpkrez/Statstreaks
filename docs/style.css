@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-  min-width: 500px;
+  min-width: 700px;
   max-width: 900px; /* Set the maximum width to your desired value */
   width: 90%; /* Adjust the container width for better responsiveness */
   margin: 20px auto;
