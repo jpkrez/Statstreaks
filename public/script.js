@@ -177,7 +177,7 @@ const updateButtonStyles = () => {
 };
 
 async function getJsonData() {
-  const response = await fetch('http://localhost:3000/api/data');
+  const response = await fetch('https://raw.githubusercontent.com/jpkrez/Statstreaks/master/public/mw2_player_stats2023.csv');
   jsonData = await response.json(); // Update the global jsonData variable
 }
 
