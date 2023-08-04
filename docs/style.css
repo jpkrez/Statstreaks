@@ -165,3 +165,35 @@ body {
   }
   
 
+/* Adjustments for better spacing on mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Increase the font size for better readability on mobile devices */
+  }
+  
+  .container {
+    max-width: 90%; /* Adjust the container width for mobile devices */
+    max-height: none; /* Remove the maximum height on mobile devices */
+    height: auto; /* Set height to auto on mobile devices */
+  }
+
+  .streak-container {
+    display: flex; /* Change to a flexbox layout on mobile devices */
+    flex-direction: column; /* Stack streak boxes vertically on mobile */
+    align-items: center; /* Center the items in the column */
+  }
+
+  .streak-number {
+    margin: 5px 0; /* Add spacing between streak numbers on mobile */
+  }
+
+  .streak-box {
+    margin: 10px 0; /* Add spacing between streak boxes on mobile */
+  }
+
+  /* Fix the issue with the yellow color not appearing when hovering on mobile */
+  .selected {
+    background-color: #ffd54f;
+    color: #000;
+  }
+}
