@@ -168,12 +168,6 @@ body {
     body {
       font-size: 16px; /* Increase the font size for better readability on mobile devices */
     }
-    
-    .container {
-      max-width: 90%; /* Adjust the container width for mobile devices */
-      padding: 10px; /* Reduce the padding for better use of space on mobile */
-    }
-  
     .streak-container {
       grid-template-columns: 1fr; /* Change to a single column on mobile devices */
       grid-row-gap: 10px; /* Add vertical gap between streak boxes on mobile */
