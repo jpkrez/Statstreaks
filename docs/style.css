@@ -2,30 +2,29 @@
 
 /* Global styles */
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    background-color: black;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto; /* Remove the fixed height for better responsiveness */
-    max-height: 80vh; /* Set a maximum height to prevent excessive scrolling */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
-  }
-  
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: black;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto; /* Remove the fixed height for better responsiveness */
+  max-height: 80vh; /* Set a maximum height to prevent excessive scrolling */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+}
   h1 {
     text-align: center;
     margin-top: 20px; /* Add the margin back */
@@ -177,8 +176,22 @@ body {
   }
 
   .streak-container {
-    grid-template-columns: 1fr; /* Change to a single column layout on mobile devices */
-    grid-row-gap: 10px; /* Add vertical spacing between streak boxes on mobile */
-    justify-content: center;
+    display: flex; /* Change to a flexbox layout on mobile devices */
+    flex-direction: column; /* Stack streak boxes vertically on mobile */
+    align-items: center; /* Center the items in the column */
+  }
+
+  .streak-number {
+    margin: 5px 0; /* Add spacing between streak numbers on mobile */
+  }
+
+  .streak-box {
+    margin: 10px 0; /* Add spacing between streak boxes on mobile */
+  }
+
+  /* Fix the issue with the yellow color not appearing when hovering on mobile */
+  .selected {
+    background-color: #ffd54f;
+    color: #000;
   }
 }
