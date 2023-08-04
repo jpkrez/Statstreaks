@@ -64,12 +64,26 @@ const startGame = async () => {
   isGameEnded = false; // Reset isGameEnded to false when starting a new game
 
   try {
-    // Fetch a new featured stat and display it
-    await getJsonData();
-    featuredStat = getFeaturedStatWithOverUnder(jsonData);
-    displayFeaturedStat();
+    // Fetch the CSV data from the raw URL
+    const response = await fetch('https://raw.githubusercontent.com/jpkrez/Statstreaks/master/docs/mw2_player_stats2023.csv');
+    if (!response.ok) {
+      throw new Error('Failed to fetch CSV data');
+    }
+    const csvData = await response.text();
+    // Use PapaParse to parse the CSV data
+    Papa.parse(csvData, {
+      header: true,
+      complete: function (results) {
+        jsonData = results.data; // Update the global jsonData variable
+        featuredStat = getFeaturedStatWithOverUnder(jsonData);
+        displayFeaturedStat(); // Display the fetched featured stat
+      },
+      error: function (error) {
+        console.error('Error parsing CSV:', error);
+      },
+    });
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching CSV data:', error);
     // Show an error message on the UI
     const featuredStatContainer = document.getElementById('featuredStatContainer');
     featuredStatContainer.innerHTML = '<p>Error fetching data. Please try again later.</p>';
@@ -176,10 +190,6 @@ const updateButtonStyles = () => {
   underButton.classList.toggle('selected', isGameStarted && !isGameEnded && selectedPick === 'under');
 };
 
-async function getJsonData() {
-  const response = await fetch('https://raw.githubusercontent.com/jpkrez/Statstreaks/master/public/mw2_player_stats2023.csv');
-  jsonData = await response.json(); // Update the global jsonData variable
-}
 
 function getRandomStat(data) {
   const randomIndex = Math.floor(Math.random() * data.length);
