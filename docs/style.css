@@ -21,7 +21,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 600px; /* Set a fixed height for the container */
+    height: auto; /* Remove the fixed height for better responsiveness */
+    max-height: 80vh; /* Set a maximum height to prevent excessive scrolling */
     overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
   }
   
@@ -163,12 +164,21 @@ body {
   }
   
 
-  @media (max-width: 768px) {
-    body {
-      font-size: 14px; /* Reduce the font size for mobile devices */
-    }
-    
-    .container {
-      max-width: 90%; /* Adjust the container width for mobile devices */
-    }
+  /* Adjustments for better spacing on mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Increase the font size for better readability on mobile devices */
   }
+  
+  .container {
+    max-width: 90%; /* Adjust the container width for mobile devices */
+    max-height: none; /* Remove the maximum height on mobile devices */
+    height: auto; /* Set height to auto on mobile devices */
+  }
+
+  .streak-container {
+    grid-template-columns: 1fr; /* Change to a single column layout on mobile devices */
+    grid-row-gap: 10px; /* Add vertical spacing between streak boxes on mobile */
+    justify-content: center;
+  }
+}
